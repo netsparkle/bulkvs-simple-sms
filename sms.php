@@ -5,6 +5,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/phpmailer/src/Exception.php';
 require $_SERVER['DOCUMENT_ROOT'].'/phpmailer/src/PHPMailer.php';
 require $_SERVER['DOCUMENT_ROOT'].'/phpmailer/src/SMTP.php';
 require $_SERVER['DOCUMENT_ROOT'].'/smtp-stuff.php';
+require $_SERVER['DOCUMENT_ROOT'].'/block-list.php';
 if (empty($_GET)) {
 } else {
 		//sms values exist
