@@ -10,6 +10,9 @@ if (empty($_GET)) {
 } else {
 		//sms values exist
 		if (!empty($_GET['message'])){
+			//make sure the sender is not on the block list
+			if (!in_array($blocked,$_GET['from']))
+			{
 		//Send the incoming text to email
 				$mail_sms = new PHPMailer(true);
 				$mail_sms->isHTML(true);
@@ -37,6 +40,9 @@ if (empty($_GET)) {
 				$mail_sms->Body = $_GET['message'];
 				$mail_sms->Send();
 				echo 'OK';
-		}
+		}else{
+				echo 'OK'; //send the expected reposnse so that bulkvs doesn't keep sending the same sms
+			}
+	}
 }
 //EOF
